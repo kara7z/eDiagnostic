@@ -1,0 +1,29 @@
+# Maven build output
+target/
+*.class
+*.war
+*.ear
+*.jar
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# VS Code
+.vscode/
+
+# NetBeans
+nbactions.xml
+nb-configuration.xml
+
+# OS
+.DS_Store
+Thumbs.db

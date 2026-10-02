@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd"
+             version="3.1">
+
+  <persistence-unit name="teleExpertisePU" transaction-type="JTA">
+    <class>project.models.Specialty</class>
+    <class>project.models.User</class>
+    <class>project.models.Patient</class>
+    <class>project.models.VitalSign</class>
+    <class>project.models.QueueEntry</class>
+    <class>project.models.Consultation</class>
+    <class>project.models.TimeSlot</class>
+    <class>project.models.ExpertiseRequest</class>
+    <class>project.models.MedicalProcedure</class>
+    <class>project.models.ConsultationProcedure</class>
+    <properties>
+
+      <property name="jakarta.persistence.schema-generation.database.action" value="update"/>
+    </properties>
+  </persistence-unit>
+</persistence>

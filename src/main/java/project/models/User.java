@@ -25,7 +25,7 @@ import project.enums.Role;
 
 @Entity
 @Table(name = "users",
-        uniqueConstraints = @UniqueConstraint(name = "uk_user_login", columnNames = "login"))
+        uniqueConstraints = @UniqueConstraint(name = "uk_user_email", columnNames = "email"))
 public class User implements Serializable {
 
     public static final int CONSULTATION_DURATION_MINUTES = 30;
@@ -47,7 +47,7 @@ public class User implements Serializable {
     @NotBlank
     @Size(max = 80)
     @Column(nullable = false, unique = true, length = 80)
-    private String login;
+    private String email;
 
     @NotBlank
     @Column(name = "password_hash", nullable = false, length = 100)
@@ -112,12 +112,12 @@ public class User implements Serializable {
         this.firstName = firstName;
     }
 
-    public String getLogin() {
-        return login;
+    public String getEmail() {
+        return email;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPasswordHash() {

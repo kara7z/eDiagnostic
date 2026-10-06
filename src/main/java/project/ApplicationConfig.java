@@ -14,9 +14,17 @@
  ********************************************************************************/
 package project;
 
+import jakarta.annotation.sql.DataSourceDefinition;
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
 
+@DataSourceDefinition(
+    name = "java:app/jdbc/teleExpertiseDS",
+    className = "org.mariadb.jdbc.MariaDbDataSource",
+    url = "jdbc:mariadb://localhost:3306/ediagnostic",
+    user = "root",
+    password = "Admin1234@"
+)
 @ApplicationPath("/api")
 public class ApplicationConfig extends Application {
 

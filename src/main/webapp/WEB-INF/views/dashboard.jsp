@@ -12,17 +12,7 @@
       list-style: none;
       box-sizing: border-box;
     }
-    body{
-      background-color: black;
-      min-height: 100vh;
-      width: 100%;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-family: sans-serif;
-    }
+    body{ background-color: black; min-height: 100vh; width: 100%; margin: 0; padding-top: 60px; display: flex; justify-content: center; align-items: center; color: white; font-family: sans-serif; }
     #dashboard{
       display: flex;
       flex-direction: column;
@@ -36,6 +26,7 @@
     </style>
 </head>
 <body>
+  <%@ include file="/WEB-INF/views/navbar.jsp" %>
   <div id="dashboard">
     <h1>Dashboard</h1>
     <p>Role: ${sessionScope.role}</p>

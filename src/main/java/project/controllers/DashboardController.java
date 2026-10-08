@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebServlet({ "/dashboard" })
+@WebServlet({ "/", "/dashboard" })
 public class DashboardController extends HttpServlet {
 
   @Override

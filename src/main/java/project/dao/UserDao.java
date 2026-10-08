@@ -6,6 +6,8 @@ import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceContext;
 import project.models.User;
 
+import java.util.List;
+
 @ApplicationScoped
 public class UserDao extends GenericDao<User> {
 
@@ -20,6 +22,13 @@ public class UserDao extends GenericDao<User> {
     @Override
     protected Class<User> getType() {
         return User.class;
+    }
+
+    public List<User> findSpecialists() {
+        return em.createQuery(
+                "SELECT u FROM User u LEFT JOIN FETCH u.specialty WHERE u.role = project.enums.Role.SPECIALIST AND u.active = true",
+                User.class)
+                .getResultList();
     }
 
     public User findByEmail(String email) {
